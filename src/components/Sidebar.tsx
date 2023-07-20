@@ -12,7 +12,7 @@ const Sidebar: React.FC<Props> = (props) => {
   // Values for the forme inputs
   const [section, setSection] = useState({ section: "", color: "", items: [] });
   const [selectedSection, setSelectedSection] = useState("");
-  const [item, setItem] = useState({ title: "", from: "", to: "", duration: 0, completed: false });
+  const [item, setItem] = useState({ title: "", from: format(new Date(), "yyyy-MM-dd"), to: "", duration: 0, completed: false });
   
   // Handling input changes according to sections inputs
   const handleSectionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -102,7 +102,7 @@ const Sidebar: React.FC<Props> = (props) => {
           <label htmlFor="title">Title</label>
           <input type="text" name="title" id="title" onChange={handleItemChange}/>
           <label htmlFor="from">From</label>
-          <input type="date" name="from" id="from" onChange={handleItemChange}/>
+          <input type="date" name="from" id="from" value={item.from} onChange={handleItemChange}/>
           <label htmlFor="to">To {item.duration} month(s)</label>
           <input type="date" name="to" id="to" onChange={handleItemChange} />
           <button type="button" onClick={handleAddItem}>Add Item</button>

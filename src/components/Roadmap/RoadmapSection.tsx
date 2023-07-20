@@ -15,6 +15,9 @@ const RoadmapSection: React.FC<Props> = ({
   children,
 }) => {
   const lightenedColor = Color(color).lighten(0.4);
+  const colorsheme = Color(color).isDark() ? "dark" : "light";
+
+  console.log(colorsheme)
 
   return (
     <div

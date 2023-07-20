@@ -17,12 +17,11 @@ const RoadmapTimeline = (props: Props) => {
 
   return (
     <div>
-      <h1>Roadmap Timeline</h1>
       <div className="timeline">
         {months.map((month, index) => (
           <div key={index} className="timeline-item">
+            <span><small>{month.year}</small></span>
             <span>{month.month}</span>
-            <span>{month.year}</span>
           </div>
         ))}
       </div>

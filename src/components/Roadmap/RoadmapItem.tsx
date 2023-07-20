@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 type Props = {
   onClick: () => void;
@@ -26,10 +26,10 @@ const RoadmapItem = (props: Props) => {
       >
         -
       </button>
-      <h4>{props.title}</h4>
-      {/* <span>
+      <span className="item-title">{props.title}</span>
+      <span className="item-details">
         {props.from} - {props.to} ({props.duration} days)
-      </span> */}
+      </span>
     </div>
   );
 };
